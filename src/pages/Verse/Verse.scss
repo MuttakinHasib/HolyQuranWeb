@@ -1,0 +1,27 @@
+.top-card {
+  border: 1px dashed #ddd;
+  // border: 1px dashed #6425bce3;
+  border-radius: 10px;
+}
+
+.surah-name {
+  color: #011752 !important;
+}
+
+
+.verse_key {
+  text-align: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // width: 55px;
+  // height: 55px;
+  margin-right: 30px;
+  padding: 15px;
+  border-radius: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(235, 234, 238, 0.712);
+  // background-color: #7837d3c2;
+  // color: #fff;
+}

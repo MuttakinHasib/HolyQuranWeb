@@ -1,0 +1,142 @@
+@font-face {
+  src: url(./assets/fonts/surah_names.ttf);
+  font-family: surah_names;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(./assets/fonts/noorehuda.ttf);
+  font-family: noorehuda;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/AmiriQuran.ttf);
+  font-family: AmiriQuran;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/divehi.otf);
+  font-family: divehi;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/hafs.ttf);
+  font-family: hafs;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/me_quran.ttf);
+  font-family: me_quran;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/noorehidayat.ttf);
+  font-family: noorehidayat;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/Bornopata-Regular.ttf);
+  font-family: BornopataRegular;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/Bornopata-Bold.ttf);
+  font-family: BornopataBold;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+@font-face {
+  src: url(./assets/fonts/BenSenHandwriting.ttf);
+  font-family: BenSenHandwriting;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+@font-face {
+  src: url(./assets/fonts/kalpurush.ttf);
+  font-family: kalpurush;
+  font-style: normal;
+  /* font-weight: 400; */
+}
+
+.text-bn {
+  font-family: BenSenHandwriting !important;
+  font-size: 30px;
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.774);
+  /* color: rgb(110, 110, 110); */
+}
+
+.text-tafseer {
+  font-family: BornopataRegular !important;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.text-en {
+  font-family: 'Signika', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.arabic-font {
+  font-family: noorehuda;
+  font-size: 55px;
+  text-align: right;
+  padding: 10px 0px 10px 30px;
+  color: #011240;
+  /* font-weight: 100; */
+}
+
+body {
+  margin: 0;
+  /* font-family: 'Baloo Da 2', cursive; */
+  /* font-family: 'Ubuntu', sans-serif; */
+  font-family: 'Signika', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 100vw;
+  overflow-x: hidden;
+  color: #021243;
+  /* background-color: #021243 !important;
+  background-color: #021243b6 !important; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+[class*=' icon-surah'],
+[class^='icon-surah'] {
+  font-family: 'surah_names' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 25px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

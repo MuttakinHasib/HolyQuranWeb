@@ -1,0 +1,2 @@
+import { setLocalStorageData } from './setLocalStorageData';
+

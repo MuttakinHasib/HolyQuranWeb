@@ -1,0 +1,30 @@
+.quick-links {
+  text-align: center;
+
+  span {
+    display: inline-block;
+    margin: 8px 0;
+    word-break: break-all;
+    padding: 0px 20px;
+
+    &:first-child {
+      padding-left: 0;
+      color: rgb(185, 184, 184);
+    }
+
+    &:not(:first-child) {
+      border-left: 2px solid #ddd;
+
+    }
+
+    a {
+      text-decoration: none;
+      color: #46b891;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: #257e5f;
+      }
+    }
+  }
+}
