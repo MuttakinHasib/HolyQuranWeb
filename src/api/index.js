@@ -1,13 +1,13 @@
 import axios from 'axios';
 require('dotenv').config();
 
-const ch_api = '//api.quran.com:3000/api/v3';
+const ch_api = 'https://cors-anywhere.herokuapp.com//api.quran.com:3000/api/v3';
 const api_key = process.env.REACT_APP_API_KEY;
 const api = `http://api.globalquran.com`;
 
 export const fetchChaptersList = () =>
   axios.create({
-    baseURL: '//api.quran.com:3000/api/v3/',
+    baseURL: 'https://cors-anywhere.herokuapp.com//api.quran.com:3000/api/v3/',
   });
 
 export const getChaptersList = async () => {
