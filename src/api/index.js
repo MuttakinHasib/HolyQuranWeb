@@ -1,14 +1,13 @@
 import axios from 'axios';
-import { setLoading } from '../context/actions';
 require('dotenv').config();
 
-const ch_api = 'http://api.quran.com:3000/api/v3';
+const ch_api = '//api.quran.com:3000/api/v3';
 const api_key = process.env.REACT_APP_API_KEY;
 const api = `http://api.globalquran.com`;
 
 export const fetchChaptersList = () =>
   axios.create({
-    baseURL: 'http://api.quran.com:3000/api/v3/',
+    baseURL: '//api.quran.com:3000/api/v3/',
   });
 
 export const getChaptersList = async () => {
@@ -16,7 +15,7 @@ export const getChaptersList = async () => {
     const {
       data: { chapters },
     } = await axios.get(`${ch_api}/chapters`);
-    console.log(chapters);
+
     return chapters;
   } catch (err) {
     console.log(err);
