@@ -60,13 +60,13 @@ const Header = () => {
                   }
                 >
                   <Option value='/'>Home</Option>
-                  {chapters.map(({ name_simple }, i) => (
+                  {chapters.map(({ name }, i) => (
                     <Option
                       onClick={e => console.log('hi')}
-                      key={name_simple}
+                      key={name}
                       value={`/${i + 1}`}
                     >
-                      {convertStartCase(name_simple)}
+                      {convertStartCase(name)}
                     </Option>
                   ))}
                 </Select>

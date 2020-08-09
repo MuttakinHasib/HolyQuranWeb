@@ -4,9 +4,8 @@ import Bismillah from '../../assets/images/bismillah.jpg';
 import kaaba from '../../assets/images/kaaba.jpg';
 import convertStartCase from 'lodash.startcase';
 
-const VerseInfoCard = ({ items }) => {
-  console.log(items);
-  return items.map(item => (
+const VerseInfoCard = ({ items }) =>
+  items.map(item => (
     <div className='top-card'>
       <div className='row justify-content-center align-items-center'>
         <div className='col-md-8'>
@@ -17,20 +16,18 @@ const VerseInfoCard = ({ items }) => {
             <div className='col-sm-6'>
               <div className='text-center my-5'>
                 <h2 className='text-dark mb-1 surah-name'>
-                  {convertStartCase(item?.name_simple)}
+                  {convertStartCase(item?.name)}
                 </h2>
-                <p className='mb-3 lead'>{item?.translated_name?.name}</p>
+                <p className='mb-3 lead'>{item?.translated_en}</p>
                 <div className='d-flex align-items-center justify-content-center'>
-                  <h5 className='text-muted'>
-                    {convertStartCase(item?.revelation_place)}
-                  </h5>
+                  <h5 className='text-muted'>{item?.place}</h5>
                   <Dot style={{ margin: '0 5px 10px 15px' }} />
-                  <h5 className='text-muted'>{item?.verses_count} Verses</h5>
+                  <h5 className='text-muted'>{item?.count} Verses</h5>
                 </div>
               </div>
             </div>
           </div>
-          {item?.bismillah_pre && (
+          {item?.bismillah && (
             <div className='text-center mt-n5 mb-2'>
               {/* <Bismillah width='250px' /> */}
               <img src={Bismillah} alt='' className='img-fluid' />
@@ -40,6 +37,5 @@ const VerseInfoCard = ({ items }) => {
       </div>
     </div>
   ));
-};
 
 export default VerseInfoCard;
