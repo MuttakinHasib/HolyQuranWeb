@@ -8,6 +8,11 @@
   color: #011752 !important;
 }
 
+.card-bg {
+  &:nth-child(odd) {
+    background-color: rgba(248, 248, 248, 0.808);
+  }
+}
 
 .verse_key {
   text-align: center;

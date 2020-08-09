@@ -8,16 +8,16 @@ const QuickLinks = () => {
         <h5 className='quick-links mb-0'>
           <span>Quick Links</span>
           <span>
-            <Link to='f'>Surah Al-Kahf</Link>
+            <Link to='18'>Surah Al-Kahf</Link>
           </span>
           <span>
-            <Link to='f'>Surah Yasin</Link>
+            <Link to='36'>Surah Yasin</Link>
           </span>
           <span>
-            <Link to='f'>Surah Ar-Rahman</Link>
+            <Link to='55'>Surah Ar-Rahman</Link>
           </span>
           <span>
-            <Link to='f'>Al Mulk</Link>
+            <Link to='67'>Al Mulk</Link>
           </span>
         </h5>
       </div>

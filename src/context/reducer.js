@@ -11,6 +11,7 @@ import {
   FETCH_SURAHS_NAME,
   FETCH_VERSES_DATA,
   FETCH_CHAPTERS,
+  SET_LOADING,
 } from './types';
 import { getLocalStorageData } from '../utils/getLocalStorageData';
 
@@ -26,7 +27,7 @@ const banglaFontSize = getLocalStorageData('banglaFontSize');
 const tafseerFontSize = getLocalStorageData('tafseerFontSize');
 
 export const initialState = {
-  verses: null,
+  verses: [],
   surahs: [],
   chapters: [],
   isDrawerOpen: false,

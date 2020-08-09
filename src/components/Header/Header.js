@@ -2,6 +2,8 @@ import React from 'react';
 import { Select } from 'antd';
 import logo from '../../assets/images/quran.png';
 import SelectMode from '../Theme/SelectMode';
+import convertStartCase from 'lodash.startcase';
+
 import './Header.scss';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useStateValue } from '../../context/StateProvider';
@@ -11,12 +13,11 @@ import { OPEN_DRAWER } from '../../context/types';
 const { Option } = Select;
 
 const Header = () => {
-  const [{ surahs }] = useStateValue();
-  const [{ isDrawerOpen }, dispatch] = useStateValue();
+  const [{ chapters, isDrawerOpen }, dispatch] = useStateValue();
   const history = useHistory();
   const { pathname } = useLocation();
   const id = pathname.slice(-1);
-  console.log(id)
+  console.log(id);
   const showDrawer = () => {
     dispatch({
       type: OPEN_DRAWER,
@@ -59,13 +60,13 @@ const Header = () => {
                   }
                 >
                   <Option value='/'>Home</Option>
-                  {surahs.map(({ title }, i) => (
+                  {chapters.map(({ name_simple }, i) => (
                     <Option
                       onClick={e => console.log('hi')}
-                      key={title}
+                      key={name_simple}
                       value={`/${i + 1}`}
                     >
-                      {title}
+                      {convertStartCase(name_simple)}
                     </Option>
                   ))}
                 </Select>

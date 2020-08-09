@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import api from './api';
+import { getChaptersList } from './api';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import { useStateValue } from './context/StateProvider';
@@ -13,12 +13,9 @@ const App = () => {
   const [, dispatch] = useStateValue();
   useEffect(() => {
     const getChapters = async () => {
-      const {
-        data: { chapters },
-      } = await api.get(`/chapters`);
       dispatch({
         type: FETCH_CHAPTERS,
-        chapters,
+        chapters: await getChaptersList(),
       });
     };
     getChapters();

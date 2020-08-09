@@ -16,44 +16,44 @@ import VerseInfoCard from '../../components/Cards/VerseInfoCard';
 import Spinner from '../../components/Spinner/Spinner';
 import Tafseer from '../../components/Tafseer/Tafseer';
 import Transition from '../../components/Transition/Transition';
-import api from '../../api';
-import { FETCH_VERSE_DATA, FETCH_VERSES_DATA } from '../../context/types';
+import { fetchChaptersList, fetchSurah } from '../../api';
+import { FETCH_VERSES_DATA } from '../../context/types';
 
 const Verse = () => {
   const [, setToast] = useToasts();
   const [surah, setSurah] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { copy } = useClipboard();
   const [showTafseer, setShowTafseer] = useState(false);
   const [tafseerId, setTafseerId] = useState(null);
   const { pathname } = useLocation();
   const getId = pathname.slice(1);
-  const [
-    { verses, arabicFontSize, selectedTransition },
-    dispatch,
-  ] = useStateValue();
-  // const getVerses = chapters.filter(chapter => chapter.id === getId);
-
+  const [{ chapters, arabicFontSize, selectedTransition }] = useStateValue();
+  const getVerses = chapters.filter(chapter => chapter.id === parseInt(getId));
+  console.log(getVerses);
   useEffect(() => {
     const fetchChaptersData = async num => {
-      const { data } = await api.get(`/surah/surah_${num}.json`);
+      setLoading(true);
+
+      const data = await fetchSurah(num);
+      setLoading(false);
       setSurah(data);
-      dispatch({
-        type: FETCH_VERSES_DATA,
-        verses: data,
-      });
     };
     fetchChaptersData(getId);
   }, [getId]);
+  console.log(chapters);
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <div className='container'>
       <div className='mt-5'>
-        {verses && <VerseInfoCard item={verses} />}
-        {verses &&
-          Object.keys(verses['verse']).map((key, i) => (
-            <div className='border-bottom card-body my-3' key={i}>
+        {chapters && <VerseInfoCard items={getVerses} />}
+        {surah &&
+          Object.keys(surah).map((key, i) => (
+            <div className='border-bottom card-body card-bg' key={i}>
               <div className='d-flex align-items-center'>
-                <span className='verse_key mr-5 my-2'>{i + 1}</span>
+                <span className='verse_key mr-5 my-2'>{`${surah[key].surah}:${surah[key].ayah}`}</span>
                 <Button
                   title='Copy'
                   icon={<CopyTwoTone style={{ fontSize: '27px' }} />}
@@ -117,7 +117,7 @@ const Verse = () => {
                     style={{ fontSize: `${arabicFontSize}px` }}
                     key={key}
                   >
-                    {verses.verse[key]}
+                    {surah[key].verse}
                   </h4>
                   {/* <Transition item={surah.verse[key]} /> */}
                 </div>
